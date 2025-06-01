@@ -11,11 +11,13 @@ import com.starlight.hotelmanagement.model.User;
  */
 public class LoginFrame extends JFrame {
     private final AuthService authService = new AuthService();
-
     private JTextField txtEmail;
     private JPasswordField txtPassword;
     private JButton btnLogin, btnRegister;
 
+    /**
+     * Construtor da tela de login.
+     */
     public LoginFrame() {
         setTitle("Hotel Management - Login");
         setSize(400, 300);
@@ -23,24 +25,21 @@ public class LoginFrame extends JFrame {
         setLocationRelativeTo(null);
         initComponents();
     }
-
+    /**
+     * Inicializa os componentes da tela de login.
+     */
     private void initComponents() {
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        // Email Field
         gbc.gridx = 0; gbc.gridy = 0;
         panel.add(new JLabel("Email:"), gbc);
-        
         gbc.gridx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
         txtEmail = new JTextField(20);
         panel.add(txtEmail, gbc);
-
-        // Password Field
         gbc.gridx = 0; gbc.gridy = 1;
         panel.add(new JLabel("Senha:"), gbc);
-        
         gbc.gridx = 1;
         txtPassword = new JPasswordField(20);
         panel.add(txtPassword, gbc);
@@ -50,7 +49,6 @@ public class LoginFrame extends JFrame {
         btnLogin = new JButton("Login");
         btnLogin.addActionListener(e -> performLogin());
         panel.add(btnLogin, gbc);
-
         gbc.gridy = 3;
         btnRegister = new JButton("Registrar Novo Usuário");
         btnRegister.addActionListener(e -> openRegisterFrame());
@@ -94,14 +92,4 @@ public class LoginFrame extends JFrame {
         new RegisterFrame().setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            try {
-                UIManager.setLookAndFeel(new FlatIntelliJLaf());
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            new LoginFrame().setVisible(true);
-        });
-    }
 }

@@ -1,6 +1,7 @@
 package com.starlight.hotelmanagement;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.starlight.hotelmanagement.gui.LoginFrame;
+import com.starlight.hotelmanagement.util.DatabaseUtil;
 import java.text.ParseException;
 import javax.swing.*;
 
@@ -15,7 +16,7 @@ public class Hotelmanagement {
      */
     public static void main(String[] args) throws ParseException {
 
-        // DatabaseUtil.initializeDB();
+        DatabaseUtil.initializeDB();
         
         FlatIntelliJLaf.setup();
         

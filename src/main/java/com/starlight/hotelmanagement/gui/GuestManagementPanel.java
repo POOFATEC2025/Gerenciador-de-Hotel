@@ -2,7 +2,6 @@ package com.starlight.hotelmanagement.gui;
 
 import com.starlight.hotelmanagement.dao.GuestDAO;
 import com.starlight.hotelmanagement.model.Guest;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -16,6 +15,10 @@ public class GuestManagementPanel extends JPanel {
     private final DefaultTableModel tableModel;
     private final JTable guestsTable;
 
+    /**
+     * Construtor do painel de gerenciamento de hóspedes.
+     * Configura a tabela, botões e layout.
+     */
     public GuestManagementPanel() {
         setLayout(new BorderLayout());
 
@@ -71,7 +74,7 @@ public class GuestManagementPanel extends JPanel {
     private void showGuestForm(Guest guest) {
         JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), 
             guest == null ? "Novo Hóspede" : "Editar Hóspede", true);
-        dialog.setSize(350, 300);
+        dialog.setSize(400, 350);
         dialog.setLocationRelativeTo(this);
 
         JPanel formPanel = new JPanel(new GridLayout(5, 2, 5, 5));

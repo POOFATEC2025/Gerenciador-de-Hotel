@@ -176,7 +176,11 @@ public class UserDAO {
     return users;
     }
 
-    // Método para verificar se um email já está cadastrado
+    /**
+     * Verifica se um e-mail já está cadastrado no sistema.
+     * @param email E-mail a ser verificado.
+     * @return true se o e-mail já existir, false caso contrário.
+     */
     public boolean emailExists(String email) {
         String sql = "SELECT COUNT(*) FROM users WHERE email = ?";
         

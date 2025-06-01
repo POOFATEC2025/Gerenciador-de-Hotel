@@ -14,6 +14,9 @@ public class RegisterFrame extends JFrame {
     private JPasswordField txtPassword, txtConfirmPassword;
     private JButton btnRegister;
 
+    /**
+     * Construtor da tela de registro.
+     */
     public RegisterFrame() {
         setTitle("Registro de Novo Usuário");
         setSize(400, 350);
@@ -21,6 +24,10 @@ public class RegisterFrame extends JFrame {
         initComponents();
     }
 
+    /**
+     * Inicializa os componentes da tela de registro.
+     * Cria os campos de entrada e o botão de registro.
+     */
     private void initComponents() {
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -41,6 +48,14 @@ public class RegisterFrame extends JFrame {
         add(panel);
     }
 
+    /**
+     * Adiciona um campo de entrada ao painel com o rótulo correspondente.
+     * @param panel O painel onde o campo será adicionado.
+     * @param gbc As restrições de layout do GridBag.
+     * @param row A linha onde o campo será adicionado.
+     * @param label O rótulo do campo.
+     * @param field O componente de entrada (JTextField ou JPasswordField).
+     */
     private void addField(JPanel panel, GridBagConstraints gbc, int row, String label, JComponent field) {
         gbc.gridx = 0; gbc.gridy = row;
         panel.add(new JLabel(label), gbc);
@@ -49,6 +64,10 @@ public class RegisterFrame extends JFrame {
         panel.add(field, gbc);
     }
 
+    /**
+     * Realiza o registro do novo usuário.
+     * Valida os campos e chama o serviço de autenticação para registrar o usuário.
+     */
     private void performRegistration() {
         String name = txtName.getText();
         String email = txtEmail.getText();

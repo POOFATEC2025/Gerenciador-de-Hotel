@@ -258,7 +258,5 @@ public class ReservationDAO {
 
     return availableRooms;
 }
-
-
     
 }

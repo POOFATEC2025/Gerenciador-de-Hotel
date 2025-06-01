@@ -17,12 +17,20 @@ public class UserManagementPanel extends JPanel {
     private JTable usersTable;
     private DefaultTableModel tableModel;
 
+    /**
+     * Construtor do painel de gerenciamento de usuários.
+     * Configura o layout, inicializa os componentes e carrega os usuários.
+     */
     public UserManagementPanel() {
         setLayout(new BorderLayout());
         initComponents();
         loadUsers();
     }
 
+    /**
+     * Inicializa os componentes do painel.
+     * Cria a barra de ferramentas, a tabela de usuários e a barra de status.
+     */
     private void initComponents() {
         // Toolbar
         JToolBar toolBar = new JToolBar();
@@ -64,6 +72,10 @@ public class UserManagementPanel extends JPanel {
         add(statusLabel, BorderLayout.SOUTH);
     }
 
+    /**
+     * Carrega os usuários na tabela.
+     * Limpa a tabela e adiciona os usuários do banco de dados.
+     */
     private void loadUsers() {
         tableModel.setRowCount(0);
         List<User> users = userDAO.findAll();
@@ -80,6 +92,13 @@ public class UserManagementPanel extends JPanel {
         ((JLabel) getComponent(2)).setText(" Total de usuários: " + users.size());
     }
 
+    /**
+     * Exibe o formulário para cadastro ou edição de usuário.
+     * Se o usuário for null, exibe o formulário de cadastro.
+     * Caso contrário, preenche os campos com os dados do usuário selecionado.
+     *
+     * @param user Usuário a ser editado ou null para novo usuário.
+     */
     private void showUserForm(User user) {
         JDialog dialog = new JDialog();
         dialog.setTitle(user == null ? "Novo Usuário" : "Editar Usuário");
@@ -161,6 +180,10 @@ public class UserManagementPanel extends JPanel {
         dialog.setVisible(true);
     }
 
+    /**
+     * Edita o usuário selecionado na tabela.
+     * Se nenhum usuário estiver selecionado, exibe uma mensagem de erro.
+     */
     private void editSelectedUser() {
         int selectedRow = usersTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -172,6 +195,11 @@ public class UserManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Remove o usuário selecionado na tabela.
+     * Se nenhum usuário estiver selecionado, exibe uma mensagem de erro.
+     * Não permite remover o usuário admin principal.
+     */
     private void deleteSelectedUser() {
         int selectedRow = usersTable.getSelectedRow();
         if (selectedRow >= 0) {

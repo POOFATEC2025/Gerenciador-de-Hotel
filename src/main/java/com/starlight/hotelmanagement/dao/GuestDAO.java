@@ -11,6 +11,12 @@ import java.util.List;
  */
 public class GuestDAO {
 
+    /**
+     * Insere um novo hóspede no banco de dados.
+     *
+     * @param guest O hóspede a ser inserido.
+     * @return true se a inserção for bem-sucedida, false caso contrário.
+     */
     public boolean insert(Guest guest) {
         String sql = "INSERT INTO guests (name, document, phone, email) VALUES (?, ?, ?, ?)";
         try (Connection conn = DatabaseUtil.getConnection();
@@ -31,6 +37,10 @@ public class GuestDAO {
         return false;
     }
 
+    /**
+     * Lista todos os hóspedes cadastrados no banco de dados.
+     * @return Lista de hóspedes.
+     */
     public List<Guest> findAll() {
         List<Guest> guests = new ArrayList<>();
         String sql = "SELECT * FROM guests";
@@ -52,6 +62,11 @@ public class GuestDAO {
         return guests;
     }
 
+    /**
+     * Encontra hóspede pelo ID.
+     * @param id
+     * @return Objeto Guest ou null se não encontrado.
+     */
     public Guest findById(int id) {
         String sql = "SELECT * FROM guests WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConnection();

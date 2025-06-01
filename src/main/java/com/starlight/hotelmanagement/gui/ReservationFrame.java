@@ -6,8 +6,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.*;
-//import java.awt.*;
-//import java.awt.event.*;
 import java.text.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -27,6 +25,10 @@ public class ReservationFrame extends JPanel {
     private final GuestDAO guestDAO = new GuestDAO();
     private final ReservationDAO reservationDAO = new ReservationDAO();
 
+    /**
+     * Construtor do painel de reservas.
+     * @param user Usuário logado no sistema.
+     */
     public ReservationFrame(User user) {
         this.currentUser = user;
         setLayout(new BorderLayout());
@@ -34,6 +36,10 @@ public class ReservationFrame extends JPanel {
         loadReservations();
     }
 
+    /**
+     * Inicializa os componentes do painel de reservas.
+     * Cria a barra de ferramentas, tabela de reservas e status bar.
+     */
     private void initComponents() {
         // Toolbar
         JToolBar toolBar = new JToolBar();
@@ -219,6 +225,10 @@ public class ReservationFrame extends JPanel {
         dialog.setVisible(true);
     }
 
+    /**
+     * Cria um campo de data formatado com máscara.
+     * @return JFormattedTextField configurado para data.
+     */
     private JFormattedTextField createDateField() {
         try {
             MaskFormatter formatter = new MaskFormatter("####-##-##");
@@ -441,9 +451,13 @@ public class ReservationFrame extends JPanel {
         ((JLabel) getComponent(2)).setText(" Total de reservas: " + tableModel.getRowCount());
     }
     
+    /**
+     * Exibe o diálogo para selecionar ou cadastrar um hóspede.
+     * @return O hóspede selecionado ou cadastrado, ou null se cancelado.
+     */
     private Guest showGuestSelectionDialog() {
         JDialog guestDialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Selecionar Hóspede", true);
-        guestDialog.setSize(400, 250);
+        guestDialog.setSize(400, 350);
         guestDialog.setLocationRelativeTo(this);
 
         JComboBox<Guest> cmbGuest = new JComboBox<>();
@@ -478,6 +492,10 @@ public class ReservationFrame extends JPanel {
         return selectedGuest[0];
     }
 
+    /**
+     * Exibe o formulário para cadastrar um novo hóspede.
+     * @return O hóspede cadastrado ou null se cancelado.
+     */
     private Guest showGuestForm() {
         JTextField txtName = new JTextField();
         JTextField txtDocument = new JTextField();

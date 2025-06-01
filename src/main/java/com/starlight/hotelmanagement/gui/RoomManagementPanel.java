@@ -15,12 +15,20 @@ public class RoomManagementPanel extends JPanel {
     private JTable roomsTable;
     private DefaultTableModel tableModel;
 
+    /**
+     * Construtor do painel de gerenciamento de quartos.
+     * Configura o layout, inicializa os componentes e carrega os quartos.
+     */
     public RoomManagementPanel() {
         setLayout(new BorderLayout());
         initComponents();
         loadRooms();
     }
 
+    /**
+     * Inicializa os componentes do painel.
+     * Cria a barra de ferramentas, a tabela de quartos e a barra de status.
+     */
     private void initComponents() {
         // Toolbar com botões
         JToolBar toolBar = new JToolBar();
@@ -62,6 +70,10 @@ public class RoomManagementPanel extends JPanel {
         add(statusLabel, BorderLayout.SOUTH);
     }
 
+    /**
+     * Carrega os quartos do banco de dados e atualiza a tabela.
+     * Limpa a tabela antes de adicionar os novos dados.
+     */
     private void loadRooms() {
         tableModel.setRowCount(0);
         List<Room> rooms = roomDAO.findAll();
@@ -79,6 +91,11 @@ public class RoomManagementPanel extends JPanel {
         ((JLabel) getComponent(2)).setText(" Total de quartos: " + rooms.size());
     }
 
+    /**
+     * Exibe um formulário para adicionar ou editar um quarto.
+     * Se o quarto for null, é um novo quarto; caso contrário, é uma edição.
+     * @param room Quarto a ser editado ou null para novo quarto.
+     */
     private void showRoomForm(Room room) {
         
         JDialog dialog = new JDialog();
@@ -142,6 +159,10 @@ public class RoomManagementPanel extends JPanel {
         dialog.setVisible(true);
     }
 
+    /**
+     * Edita o quarto selecionado na tabela.
+     * Se nenhum quarto estiver selecionado, exibe uma mensagem de erro.
+     */
     private void editSelectedRoom() {
         int selectedRow = roomsTable.getSelectedRow();
         if (selectedRow >= 0) {
@@ -153,6 +174,11 @@ public class RoomManagementPanel extends JPanel {
         }
     }
 
+    /**
+     * Remove o quarto selecionado na tabela.
+     * Se nenhum quarto estiver selecionado, exibe uma mensagem de erro.
+     * Solicita confirmação antes de remover o quarto.
+     */
     private void deleteSelectedRoom() {
         int selectedRow = roomsTable.getSelectedRow();
         if (selectedRow >= 0) {
