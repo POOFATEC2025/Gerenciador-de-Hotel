@@ -1,5 +1,6 @@
 package com.starlight.hotelmanagement.util;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,8 +17,8 @@ public class DatabaseUtil {
      * @throws SQLException
      */
     public static Connection getConnection() throws SQLException {
-        String url = "jdbc:sqlite:" + System.getProperty("user.dir") + "/src/main/resources/db/hotel.db";
-        // String url = "jdbc:sqlite:src/main/resources/db/hotel.db";
+        String dbPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "db" + File.separator + "hotel.db";
+        String url = "jdbc:sqlite:" + dbPath;
         return DriverManager.getConnection(url);
     }
 
