@@ -68,8 +68,4 @@ java -jar target/hotelmanagement-1.0-SNAPSHOT-jar-with-dependencies.jar
 - O banco de dados (`hotel.db`) é criado automaticamente na primeira execução, caso não exista.
 - O sistema é multiplataforma (Windows, Mac, Linux).
 
-## Créditos
-
-Desenvolvido por Bruna e colaboradores.
-
 ---
