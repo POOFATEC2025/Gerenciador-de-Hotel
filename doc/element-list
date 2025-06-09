@@ -1,0 +1,6 @@
+com.starlight.hotelmanagement
+com.starlight.hotelmanagement.dao
+com.starlight.hotelmanagement.gui
+com.starlight.hotelmanagement.model
+com.starlight.hotelmanagement.service
+com.starlight.hotelmanagement.util

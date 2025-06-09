@@ -9,3 +9,4 @@ dist/
 # Arquivos temporários do sistema operacional
 .DS_Store
 Thumbs.db
+/target/

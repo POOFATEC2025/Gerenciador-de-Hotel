@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.starlight.hotelmanagement"},{"l":"com.starlight.hotelmanagement.dao"},{"l":"com.starlight.hotelmanagement.gui"},{"l":"com.starlight.hotelmanagement.model"},{"l":"com.starlight.hotelmanagement.service"},{"l":"com.starlight.hotelmanagement.util"}];updateSearchResults();

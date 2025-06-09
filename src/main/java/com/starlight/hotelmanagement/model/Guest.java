@@ -10,6 +10,9 @@ public class Guest {
     private String phone;
     private String email;
 
+    /**
+     * Construtor vazio da classe de hóspede
+     */
     public Guest() {
     }
 
@@ -30,8 +33,7 @@ public class Guest {
 
     /**
      * Obtém o ID do hóspede.
-     *
-     * @param id ID do hóspede.
+     * @return id ID do hóspede.
      */
     public int getId() {
         return id;
@@ -57,8 +59,7 @@ public class Guest {
 
     /**
      * Define o nome do hóspede.
-     *
-     * @return Nome do hóspede.
+     * @param name Nome do hóspede.
      */
     public void setName(String name) {
         this.name = name;
@@ -76,7 +77,7 @@ public class Guest {
     /**
      * Define o documento de identificação do hóspede.
      *
-     * @return Documento de identificação (CPF, RG, passaporte, etc.).
+     * @param document Documento de identificação (CPF, RG, passaporte, etc.).
      */
     public void setDocument(String document) {
         this.document = document;
@@ -94,7 +95,7 @@ public class Guest {
     /**
      * Define o telefone do hóspede.
      *
-     * @return Telefone de contato do hóspede.
+     * @param phone - Telefone de contato do hóspede.
      */
     public void setPhone(String phone) {
         this.phone = phone;

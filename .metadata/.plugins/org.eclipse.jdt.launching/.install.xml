@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dirs>
+    <entry loc="/Users/bruna/.sdkman/candidates/java/8.0.382-zulu" stamp="1689323480000"/>
+    <entry loc="/Users/bruna/.sdkman/candidates/java/17.0.9-tem" stamp="1697602664000"/>
+    <entry loc="/Users/bruna/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_21.0.6.v20250130-0529/jre" stamp="1743331961651"/>
+    <entry loc="/Users/bruna/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_21.0.6.v20250130-0529" stamp="1743331961652"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home" stamp="1736260611000"/>
+    <entry loc="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" stamp="1570271856000"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home" stamp="1570272145000"/>
+</dirs>

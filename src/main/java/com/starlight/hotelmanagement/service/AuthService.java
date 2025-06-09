@@ -76,8 +76,8 @@ public class AuthService {
 
     /**
      * Verifica se um usuário tem permissão de administrador
-     * @param user
-     * @return 
+     * @param user Usuario
+     * @return true ou false
      */
     public boolean isAdmin(User user) {
         return user != null && "ADMIN".equals(user.getRole());
@@ -85,6 +85,8 @@ public class AuthService {
 
     /**
      * Verifica se um usuário tem permissão de staff (funcionário)
+     * @param user Usuario
+     * @return true ou false
      */
     public boolean isStaff(User user) {
         return user != null && ("STAFF".equals(user.getRole()) || "ADMIN".equals(user.getRole()));
